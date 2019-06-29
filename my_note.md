@@ -1,4 +1,5 @@
 #####setting
+#####make sure about required php ext for laravel. ex. routing doesnt work without! (found it misstake takes me 20m)
     set github for transparent
     set dns for sub-domain
     set db
@@ -31,3 +32,15 @@ _____________________________
     php artisan make:model Users
     
 #####make a git commit: MVC created
+    a session íráshoz foldernek jogot kell adni:
+###### drwxrwxr-x  5 laravel www-data 4.0K Jun 28 22:03 storage
+
+    routolás
+    -create a login page
+    -create a page where all userdata
+    
+__________________________________
+    local frontend node server
+    npm install bootstrap jquery popper.js --save
+    npm run dev -> make combined css from scss of bootstrap4 to dist folder and deploy it
+    

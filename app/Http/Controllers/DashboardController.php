@@ -1,5 +1,6 @@
 <?php
 
+
 namespace App\Http\Controllers;
 
 use Illuminate\Foundation\Bus\DispatchesJobs;
@@ -7,22 +8,13 @@ use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 
-class Controller extends BaseController
+class DashboardController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
-    public function index()
+    public function show()
     {
-        return view('welcome');
+        return view('dashboard');
     }
 
-    public function home()
-    {
-        return view('welcome');
-    }
-
-    public function login()
-    {
-        return view('welcome');
-    }
 }

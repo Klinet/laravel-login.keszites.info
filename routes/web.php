@@ -11,6 +11,11 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+Route::get('/', 'HomeController@index')->name('home');
+
+Route::get('/dashboard', 'DashboardController@show')->name('dashboard');
+
+Route::get('/logout', 'AuthOController@logout')->name('logout');
+
+
