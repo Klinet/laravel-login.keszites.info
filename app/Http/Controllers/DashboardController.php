@@ -3,18 +3,35 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Foundation\Bus\DispatchesJobs;
-use Illuminate\Routing\Controller as BaseController;
-use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
+use Illuminate\Foundation\Bus\DispatchesJobs;
+use Illuminate\Foundation\Validation\ValidatesRequests;
+use App\User;
+use Illuminate\Support\Facades\Auth;
 
-class DashboardController
+class DashboardController extends Controller
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
-    public function show()
+
+    /**
+     * DashboardController constructor.
+     */
+    public function __construct()
     {
-        return view('dashboard');
+        $this->middleware('auth');
+    }
+
+    protected function show()
+    {
+
+        $users = User::all();
+        return view('dashboard', ['users' => $users]);
+    }
+
+    protected function guard()
+    {
+        return Auth::guard('with-login');
     }
 
 }

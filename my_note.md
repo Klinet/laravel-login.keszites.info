@@ -44,3 +44,5 @@ __________________________________
     npm install bootstrap jquery popper.js --save
     npm run dev -> make combined css from scss of bootstrap4 to dist folder and deploy it
     
+    php artisan make:auth
+    

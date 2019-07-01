@@ -3,9 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <title>@yield('title')</title>
-{{--    <link rel="stylesheet" href="{{ URL::to('node_modules/bootstrap/dist/css/bootstrap.css') }}">
-    <link rel="stylesheet" href="{{ URL::to('node_modules/bootstrap/dist/css/bootstrap-grid.css') }}">
-    <link rel="stylesheet" href="{{ URL::to('node_modules/bootstrap/dist/css/bootstrap-reboot.css') }}">--}}
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     @yield('styles')
 </head>

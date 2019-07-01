@@ -6,36 +6,31 @@
 
 @section('content')
     <div class="centered">
-        <p>create a page where all userdata is displayed after login with logout option</p>-
-        
+        <br>
         <table class="table table-striped">
             <thead>
             <tr>
                 <th scope="col">#</th>
-                <th scope="col">First</th>
-                <th scope="col">Last</th>
-                <th scope="col">Handle</th>
+                <th scope="col">Username</th>
+                <th scope="col">Email</th>
+                <th scope="col">First Name</th>
+                <th scope="col">Last Name</th>
+                <th scope="col">Mobile</th>
+                <th scope="col">Registered</th>
             </tr>
             </thead>
             <tbody>
-            <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-            </tr>
-            <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-            </tr>
-            <tr>
-                <th scope="row">3</th>
-                <td>Larry</td>
-                <td>the Bird</td>
-                <td>@twitter</td>
-            </tr>
+            @foreach ($users as $user)
+                <tr>
+                    <th scope="row"></th>
+                    <td>{{ $user->username }}</td>
+                    <td>{{ $user->email }}</td>
+                    <td>{{ $user->first_name }}</td>
+                    <td>{{ $user->last_name }}</td>
+                    <td>{{ $user->mobile }}</td>
+                    <td>{{ $user->created_at }}</td>
+                </tr>
+            @endforeach
             </tbody>
         </table>
     </div>

@@ -11,11 +11,14 @@
 |
 */
 
-
 Route::get('/', 'HomeController@index')->name('home');
 
-Route::get('/dashboard', 'DashboardController@show')->name('dashboard');
-
+Route::get('/login', 'AuthOController@login')->name('login');
+Route::post('/login_post', 'AuthOController@loginPost')->name('login_post');
 Route::get('/logout', 'AuthOController@logout')->name('logout');
+Route::get('/dashboard', 'DashboardController@show')->name('dashboard')->middleware('auth');
+//Route::get('/dashboard/add_user', 'UserController@addUser')->name('add_user');
+
+
 
 
